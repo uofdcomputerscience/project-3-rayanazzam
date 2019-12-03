@@ -11,7 +11,4 @@ import UIKit
 class ReviewDetailViewController: UIViewController {
     
     
-    
-    
-    
 }

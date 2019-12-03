@@ -10,9 +10,4 @@ import UIKit
 
 class ReviewInputViewController: UIViewController {
     
-    
-    
-    
-    
-    
 }
