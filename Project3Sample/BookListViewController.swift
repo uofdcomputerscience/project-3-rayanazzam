@@ -14,8 +14,6 @@ class BookListViewController: UIViewController {
     let bookService = BookService.shared
     
     override func viewDidLoad() {
-        tableView.dataSource = self
-        tableView.delegate = self
         fetchBooks()
         tableView.dataSource = self
         tableView.delegate = self

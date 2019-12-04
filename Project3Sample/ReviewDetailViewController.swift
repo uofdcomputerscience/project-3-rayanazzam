@@ -10,5 +10,16 @@ import UIKit
 
 class ReviewDetailViewController: UIViewController {
     
+    @IBOutlet weak var tvBody: UITextView!
+    @IBOutlet weak var tvTitle: UILabel!
+    @IBOutlet weak var tvReviewer: UILabel!
+    
+    var review: Review?
+    
+    override func viewDidLoad() {
+        tvBody.text = review?.body
+        tvTitle.text = review?.title
+        tvReviewer.text = review?.reviewer
+    }
     
 }

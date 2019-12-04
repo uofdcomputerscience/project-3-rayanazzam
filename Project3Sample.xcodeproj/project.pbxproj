@@ -22,6 +22,7 @@
 		4670DA9623809A5000487601 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DA9523809A5000487601 /* BookService.swift */; };
 		4670DA9823809A5900487601 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DA9723809A5900487601 /* ReviewService.swift */; };
 		4670DA9A2380A28200487601 /* DataTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DA992380A28200487601 /* DataTestViewController.swift */; };
+		4D8D6C9123975746002A4F12 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D6C9023975746002A4F12 /* ReviewCell.swift */; };
 		4DAA1A40239618E900A15CE0 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA1A3F239618E900A15CE0 /* BookCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		4670DA9523809A5000487601 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		4670DA9723809A5900487601 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		4670DA992380A28200487601 /* DataTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTestViewController.swift; sourceTree = "<group>"; };
+		4D8D6C9023975746002A4F12 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		4DAA1A3F239618E900A15CE0 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				4670DA9723809A5900487601 /* ReviewService.swift */,
 				4670DA992380A28200487601 /* DataTestViewController.swift */,
 				4DAA1A3F239618E900A15CE0 /* BookCell.swift */,
+				4D8D6C9023975746002A4F12 /* ReviewCell.swift */,
 			);
 			path = Project3Sample;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				4670DA8E23809A2800487601 /* ReviewDetailViewController.swift in Sources */,
 				4670DA9223809A3A00487601 /* Book.swift in Sources */,
 				4670DA88238099F800487601 /* BookDetailViewController.swift in Sources */,
+				4D8D6C9123975746002A4F12 /* ReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
