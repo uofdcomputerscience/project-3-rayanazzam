@@ -30,6 +30,11 @@ class BookInputViewController: UIViewController {
                            text2: String (tfAuthor.text!),
                            text3: String (tfPublishDate.text!),
                             text4: String (tfImageUrl.text!) ) {
+           
+            postBook (book: Book(id: nil, title: String (tfTitle.text!),
+                             author: String (tfAuthor.text!),
+                             published: String (tfPublishDate.text!),
+                             imageURLString: String (tfImageUrl.text!)))
             
             let controller = UIAlertController(title: "Success", message: "You have posted your book!", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
@@ -37,11 +42,8 @@ class BookInputViewController: UIViewController {
             }
             controller.addAction(okAction)
             present(controller, animated: true)
-           
-            postBook (book: Book(id: nil, title: String (tfTitle.text!),
-                             author: String (tfAuthor.text!),
-                             published: String (tfPublishDate.text!),
-                             imageURLString: String (tfImageUrl.text!)))
+            
+            clearTextFields()
             
         } else {
             let controller = UIAlertController(title: "An error occurred", message: "Please give valid inputs!", preferredStyle: .alert)
@@ -64,6 +66,13 @@ class BookInputViewController: UIViewController {
             return false
         }
         return true
+    }
+    
+    func clearTextFields() {
+        tfTitle.text = ""
+        tfAuthor.text = ""
+        tfPublishDate.text = ""
+        tfImageUrl.text = ""
     }
 }
 
