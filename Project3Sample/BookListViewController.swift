@@ -15,8 +15,10 @@ class BookListViewController: UIViewController {
     
     override func viewDidLoad() {
         tableView.dataSource = self
+        tableView.delegate = self
         fetchBooks()
-        super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
         
     }
     func fetchBooks() {
@@ -27,17 +29,6 @@ class BookListViewController: UIViewController {
         }
     }
     
-    func setImage(book: Book, bookCell: BookCell) {
-        bookService.image(for: book) { (retrievedBook, image) in
-            if book.id == retrievedBook.id {
-                DispatchQueue.main.async {
-                    bookCell.bookImage.image = image
-                }
-            }
-        }
-    }
-    
-    
 }
 
 extension BookListViewController: UITableViewDataSource {
@@ -46,15 +37,23 @@ extension BookListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let book = bookService.books[indexPath.item]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell")!
-        if let bookCell = cell as? BookCell {
-            bookCell.bookTitle.text = book.title
-            setImage(book: book, bookCell: bookCell)
-        }
+        let book_c = bookService.books[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell") as! BookCell
+        cell.config (book: book_c, service: self.bookService)
         
         return cell
     }
     
+}
+
+extension BookListViewController: UITableViewDelegate {
     
+    func tableView (_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRow = bookService.books [indexPath.item]
+        let detail = storyboard?.instantiateViewController(identifier: "BookDetailViewController") as! BookDetailViewController
+        detail.book = selectedRow
+        detail.bookService = bookService
+        
+            navigationController?.pushViewController(detail, animated: true)
+    }
 }

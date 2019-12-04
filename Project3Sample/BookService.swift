@@ -29,6 +29,7 @@ class BookService {
     }
     
     func createBook(book: Book, completion: @escaping () -> Void) {
+        print("Got here successfully")
         let encoder = JSONEncoder()
         guard let body = try? encoder.encode(book) else { return }
         var request = URLRequest(url: url)
@@ -36,6 +37,7 @@ class BookService {
         request.httpMethod = "POST"
         request.httpBody = body
         let task = URLSession(configuration: .ephemeral).dataTask(with: request) { (data, response, error) in
+            print(data, error)
             completion()
         }
         task.resume()
