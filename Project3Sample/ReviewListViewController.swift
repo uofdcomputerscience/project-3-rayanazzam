@@ -27,6 +27,11 @@ class ReviewListViewController: UIViewController {
         }
     }
     
+    @IBAction func refreshView(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.tvReviews.reloadData()
+        }
+    }
 }
 
 extension ReviewListViewController: UITableViewDataSource {

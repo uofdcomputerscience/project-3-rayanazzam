@@ -26,6 +26,11 @@ class BookListViewController: UIViewController {
             }
         }
     }
+    @IBAction func refeshView(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
 }
 
